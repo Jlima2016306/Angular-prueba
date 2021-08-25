@@ -9,20 +9,19 @@ import { Component, OnInit } from '@angular/core';
 
 export class TitleComponent implements OnInit {
   //alcance nombre  dato  contenido
-    public name : string ;
-    public edad : number ;
+    public name:string = "";
+    public edad:number = 0 ;
+    public isAvailable:boolean = true
+    public css_Class_btn: string[] = ['active','shadow']
 
-    constructor(){
-      this.name = "";
-      this.edad =13;
-
-    }
+    constructor(){}
 
 
     ngOnInit(){
 
       this.name ="Isaac";
       this.edad = 20;
+
 
     }
 

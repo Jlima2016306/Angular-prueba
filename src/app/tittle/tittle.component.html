@@ -1,5 +1,15 @@
 <h1>Prueba numero 1.0.0.0</h1>
-<ng-content select="div"></ng-content>
+<h3>Tutor: {{name}}</h3>
 
-{{getEdadNombre()}}
-<ng-content select="p"></ng-content>
+<p>Más informacion</p>
+
+
+
+<p *ngIf=" !isAvailable; else available">Lanzamiento: 25 dic 2018</p>
+<ng-template #available>
+  <span class="highligh">Curso disponible</span>
+
+</ng-template>
+
+
+<button [disabled]="isAvailable" [ngClass]="{active: isAvailable, shadow: !isAvailable}" type="button">Inscribirse</button>
