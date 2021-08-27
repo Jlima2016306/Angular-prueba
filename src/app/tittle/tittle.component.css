@@ -5,14 +5,33 @@
   border-radius: 8px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   padding:1em;
-  min-width: 300px;
+  width: 400px;
 
 }
+
+
 
 :host-context(.light) h1{
   background-color: #eee ;
   color: black;
 
+}
+
+.category{
+  display: inline-block;
+
+}
+
+h3{
+  margin: 0px
+}
+
+
+a{
+  display: inline-block;
+  margin: 1em 0px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .highligh{

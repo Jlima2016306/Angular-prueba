@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 @Component({
@@ -10,28 +10,39 @@ import { Component, OnInit } from '@angular/core';
 export class TitleComponent implements OnInit {
   //alcance nombre  dato  contenido
     public name:string = "";
-    public edad:number = 0 ;
     public isAvailable:boolean = true
     public css_Class_btn: string[] = ['active','shadow']
+    public moreInformation : boolean = false;
+    public category : string =""
+    public topics : string[] =[]
+
+    @Input() userSubscribed! : boolean ;
 
     constructor(){}
 
 
     ngOnInit(){
+      this.category = "web"
 
       this.name ="Isaac";
-      this.edad = 20;
+      this.topics = [
+        'Fundamentos del framework',
+        'Componentes',
+        'Directivas',
+        'Animaciones',
+        'Servicios',
+        'RxJS',
+        'Binding']
+
 
 
     }
 
-
-
-
-    getEdadNombre(){
-      return `${this.name} : ${this.edad}`;
-
+    toggleMoreInformations() {
+      this.moreInformation = !this.moreInformation
     }
+
+
 
 
 }

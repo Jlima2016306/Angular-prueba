@@ -1,15 +1,60 @@
-<h1>Prueba numero 1.0.0.0</h1>
-<h3>Tutor: {{name}}</h3>
+<h1>Curso Angular</h1>
 
-<p>Más informacion</p>
-
-
-
-<p *ngIf=" !isAvailable; else available">Lanzamiento: 25 dic 2018</p>
+<p *ngIf=" !isAvailable && !userSubscribed; else available">Lanzamiento: 25 dic 2018</p>
 <ng-template #available>
+
   <span class="highligh">Curso disponible</span>
 
 </ng-template>
 
 
-<button [disabled]="isAvailable" [ngClass]="{active: isAvailable, shadow: !isAvailable}" type="button">Inscribirse</button>
+<div class="category" [ngSwitch]="category">
+
+  <span *ngSwitchCase="'web'">Desarrollo web</span>
+  <span *ngSwitchCase="'mobile'">Desarrollo móvil </span>
+  <span *ngSwitchCase="'other'">Desarrollo General</span>
+  <span *ngSwitchDefault>No especificado</span>
+
+
+
+
+</div>
+
+<span ></span>
+
+<h3>Tutor: {{name}}</h3>
+
+
+
+
+<div>
+
+  <a  (click)="toggleMoreInformations()">Más informacion  <i class="fa" [ngClass]="{'fa-chevron-circle-down': !moreInformation,
+    'fa-chevron-circle-up': moreInformation}"
+    ></i></a><br>
+
+  <p *ngIf="moreInformation">Pater noster, qui es in caelis:
+    sanctificetur Nomen Tuum;
+    adveniat Regnum Tuum;
+    fiat voluntas Tua,
+    sicut in caelo, et in terra.
+    Panem nostrum cotidianum da nobis hodie;
+    et dimitte nobis debita nostra,
+    sicut et nos dimittimus debitoribus nostris;
+    et ne nos inducas in tentationem;
+    sed libera nos a Malo.</p>
+
+</div>
+
+<ul>
+  <li *ngFor="let topic of topics; index as position">{{position+1}}.-{{topic}}</li>
+</ul>
+
+
+
+
+<div>
+  <button [disabled]="!isAvailable && !userSubscribed" [ngClass]="{active: isAvailable && userSubscribed, shadow: !isAvailable}" type="button">Inscribirse</button>
+
+</div>
+
