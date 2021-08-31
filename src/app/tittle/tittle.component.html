@@ -1,6 +1,6 @@
 <h1>Curso Angular</h1>
 
-<p *ngIf=" !isAvailable && !userSubscribed; else available">Lanzamiento: 25 dic 2018</p>
+<p *ngIf=" !isAvailable && !userSubscribed; else available">Lanzamiento: {{launchDate | date:"dd MMM yyyy" | uppercase}}</p>
 <ng-template #available>
 
   <span class="highligh">Curso disponible</span>
@@ -22,7 +22,7 @@
 
 <span ></span>
 
-<h3>Tutor: {{name}}</h3>
+<h3 [redBorder]="'blue'" [redClass]="'blue-class'">Tutor: {{name}}</h3>
 
 
 
@@ -33,7 +33,7 @@
     'fa-chevron-circle-up': moreInformation}"
     ></i></a><br>
 
-  <p *ngIf="moreInformation">Pater noster, qui es in caelis:
+  <p *ngIf="moreInformation">Este curso tiene duracion de {{seconds | secondsToTimeFormats}} Pater noster, qui es in caelis:
     sanctificetur Nomen Tuum;
     adveniat Regnum Tuum;
     fiat voluntas Tua,
@@ -54,7 +54,7 @@
 
 
 <div>
-  <button [disabled]="!isAvailable && !userSubscribed" [ngClass]="{active: isAvailable && userSubscribed, shadow: !isAvailable}" type="button">Inscribirse</button>
+  <button [disabled]="!isAvailable && !userSubscribed" [ngClass]="{active: isAvailable && userSubscribed, shadow: !isAvailable}" type="button">Inscribirse {{price | currency:"GTQ"}}</button>
 
 </div>
 

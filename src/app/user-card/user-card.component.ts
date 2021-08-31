@@ -1,5 +1,8 @@
 import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 
+import {ArticleService} from '../services/articles.service';
+
+
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
@@ -10,13 +13,16 @@ export class UserCardComponent implements OnInit {
   public username!: any;
   public avatar!: any;
 
+
+
   @Output() subscribed = new EventEmitter<boolean>();
-  constructor() { }
+  constructor(public articlesS: ArticleService) { }
 
   ngOnInit(): void {
     this.name = "isaac"
     this.username ="isaac_2"
     this.avatar ='../assets/11.jpg'
+    this.articlesS.articlesCount = 20
 
     setTimeout(() => this.subscribed.emit(true),3000)  }
 
