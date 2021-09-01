@@ -1,0 +1,10 @@
+<div class="container">
+  <img [src]="avatar" alt="avatar del usuario">
+  <p class="username">{{username}}</p>
+  <p class="name">{{name}}</p>
+
+
+  <input type="text" (change)="changing($event)" value={{name}}>
+  <input type="text" [(ngModel)]="username" >
+
+</div>

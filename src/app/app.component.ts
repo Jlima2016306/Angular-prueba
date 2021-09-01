@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angula-JlimaProyect';
+  public userSubs : boolean = false;
+
+  userSubscribed(event: any) {
+    console.log('se subscribio')
+    this.userSubs = event
+    console.log(event)
+
+  }
+
+
+
 }
