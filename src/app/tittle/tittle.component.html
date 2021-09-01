@@ -27,13 +27,13 @@
 
 
 
-<div>
+<div [@showUp]="moreInformation" style="overflow: hidden;">
 
   <a  (click)="toggleMoreInformations()">Más informacion  <i class="fa" [ngClass]="{'fa-chevron-circle-down': !moreInformation,
     'fa-chevron-circle-up': moreInformation}"
     ></i></a><br>
 
-  <p *ngIf="moreInformation">Este curso tiene duracion de {{seconds | secondsToTimeFormats}} Pater noster, qui es in caelis:
+  <p >Este curso tiene duracion de {{seconds | secondsToTimeFormats}} Pater noster, qui es in caelis:
     sanctificetur Nomen Tuum;
     adveniat Regnum Tuum;
     fiat voluntas Tua,

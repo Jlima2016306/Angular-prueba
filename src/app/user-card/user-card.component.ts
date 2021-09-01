@@ -22,8 +22,6 @@ export class UserCardComponent implements OnInit {
     this.name = "isaac"
     this.username ="isaac_2"
     this.avatar ='../assets/11.jpg'
-    this.articlesS.articlesCount = 20
-
     setTimeout(() => this.subscribed.emit(true),3000)  }
 
   changing(event : any){

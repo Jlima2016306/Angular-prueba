@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { trigger, style, transition, animate, state } from '@angular/animations';
+import {showUp} from "../animations/showUp.animation"
 
 @Component({
   selector: 'app-tittle',
   templateUrl: './tittle.component.html',
-  styleUrls: ["./tittle.component.css"]
+  styleUrls: ["./tittle.component.css"],
+  animations: [showUp]
 })
 
 export class TitleComponent implements OnInit {
